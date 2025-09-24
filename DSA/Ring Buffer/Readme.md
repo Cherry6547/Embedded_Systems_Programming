@@ -26,3 +26,31 @@ Compile using `gcc`:
 ```bash
 gcc ring_buffer.c -o ring_buffer
 ./ring_buffer
+```
+## 🧪 Example Output
+Buffer full? 1\
+Got: A\
+Got: B\
+Got: C\
+Got: D\
+Got: E\
+Buffer empty? 1
+## 🚀 How It Works
+* RB_Put() inserts data into the buffer at head.
+
+* RB_Get() retrieves data from the buffer at tail.
+
+* Both indices wrap around using:
+        index = (index + 1) % size;
+* One slot is always kept empty to distinguish full vs empty condition.
+## 🔗 Next Step
+
+This buffer can now be integrated into a UART driver:
+
+* RX interrupt pushes incoming bytes into the buffer using RB_Put().
+
+* Application code reads from the buffer using RB_Get().
+
+## 📜 License
+
+MIT License – feel free to use this in your own projects.
