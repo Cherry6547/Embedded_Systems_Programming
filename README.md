@@ -29,7 +29,7 @@ Key principles:
 - DMA (register-based)
 - EXTI (external interrupts)
 - NVIC priority grouping and nesting
-- UART ring buffer implementation
+- ✅UART ring buffer implementation
 - Timer-based task scheduling
 - Software debouncing and button state machines
 
